@@ -2,7 +2,7 @@
   "name": "yang_next",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jeahuck.github.io/next_start",
+  "homepage": "http://jeahuck.github.io/next_start",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
