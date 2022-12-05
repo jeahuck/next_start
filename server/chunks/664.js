@@ -438,8 +438,9 @@ if ((typeof exports.default === "function" || typeof exports.default === "object
 /***/ 1551:
 /***/ ((module, exports, __webpack_require__) => {
 
-"use client";
 "use strict";
+
+"use client";
 Object.defineProperty(exports, "__esModule", ({
     value: true
 }));
@@ -527,7 +528,7 @@ function formatStringOrUrl(urlObjOrString) {
 /**
  * React Component that enables client-side transitions between routes.
  */ const Link = /*#__PURE__*/ _react.default.forwardRef(function LinkComponent(props, forwardedRef) {
-    if (false) { var createPropError; }
+    if (false) {}
     let children;
     const { href: hrefProp , as: asProp , children: childrenProp , prefetch: prefetchProp , passHref , replace , shallow , scroll , locale , onClick , onMouseEnter: onMouseEnterProp , onTouchStart: onTouchStartProp , legacyBehavior =Boolean(true) !== true  } = props, restProps = _object_without_properties_loose(props, [
         "href",
@@ -729,7 +730,15 @@ const normalizePathTrailingSlash = (path)=>{
         return path;
     }
     const { pathname , query , hash  } = (0, _parsePath).parsePath(path);
-    if (false) {}
+    if (true) {
+        if (/\.[^/]+\/?$/.test(pathname)) {
+            return `${(0, _removeTrailingSlash).removeTrailingSlash(pathname)}${query}${hash}`;
+        } else if (pathname.endsWith("/")) {
+            return `${pathname}${query}${hash}`;
+        } else {
+            return `${pathname}/${query}${hash}`;
+        }
+    }
     return `${(0, _removeTrailingSlash).removeTrailingSlash(pathname)}${query}${hash}`;
 };
 exports.normalizePathTrailingSlash = normalizePathTrailingSlash;
@@ -1112,8 +1121,9 @@ if ((typeof exports.default === "function" || typeof exports.default === "object
 /***/ 3573:
 /***/ ((module, exports, __webpack_require__) => {
 
-"use client";
 "use strict";
+
+"use client";
 Object.defineProperty(exports, "__esModule", ({
     value: true
 }));
@@ -1755,7 +1765,7 @@ function getMiddlewareData(source, response, options) {
         i18n: {
             locales: options.router.locales
         },
-        trailingSlash: Boolean(false)
+        trailingSlash: Boolean(true)
     };
     const rewriteHeader = response.headers.get("x-nextjs-rewrite");
     let rewriteTarget = rewriteHeader || response.headers.get("x-nextjs-matched-path");
