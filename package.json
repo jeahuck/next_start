@@ -2,13 +2,12 @@
   "name": "yang_next",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jeahuck.github.io", 
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && next export && mkdir out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
+    "deploy": "next build && next export && wsl touch out/.nojekyll && git add -f out/ && git commit -m 'test' && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "eslint": "8.27.0",
