@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const debug = process.env.NODE_ENV !== "production";
-const repository = "joonyoung-s-portfolio-page";
+const repository = "gh-subtree-pages";
 
 const nextConfig = {
   reactStrictMode: true,
